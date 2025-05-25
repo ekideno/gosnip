@@ -37,7 +37,7 @@ func main() {
 		c.HTML(200, "index.html", nil)
 	})
 
-	r.POST("/random", urlHandler.CreateRandom)
+	r.POST("/snip", urlHandler.Create)
 	r.GET("/:slug", urlHandler.GetBySlug)
 
 	err = r.Run(":9000")

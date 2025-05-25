@@ -12,10 +12,10 @@ type URLRepository interface {
 	Delete(slug string) error
 	CheckUniqueURL(url string) (bool, error)
 	GetByURL(original string) (*URL, error)
+	Update(url *URL) error
 }
 
 type URLService interface {
-	CreateRandom(url string) (*URL, error)
-	CreateSpecial(url string, slug string) error
+	Create(url string, slug string) (*URL, error)
 	GetBySlug(slug string) (string, error)
 }

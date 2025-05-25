@@ -47,3 +47,8 @@ func (r *URLRepository) GetByURL(original string) (*domain.URL, error) {
 	err := r.db.Where("original = ?", original).First(&url).Error
 	return &url, err
 }
+
+func (r *URLRepository) Update(url *domain.URL) error {
+	err := r.db.Save(url).Error
+	return err
+}
